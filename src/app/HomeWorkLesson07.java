@@ -48,6 +48,7 @@ public class HomeWorkLesson07 {
 
 
         }
+        float arithmeticMean = sumAfterFirstNegativeNumbers / countAfterFirstNegativeNumbers;
         System.out.println(Arrays.toString(array));
         System.out.println();
         System.out.println("Сума всіх від'ємних чисел в масиві: " + sum);
@@ -60,7 +61,7 @@ public class HomeWorkLesson07 {
         System.out.println();
         System.out.println("найменший елемент масиву : " + min + ", його індекс: " + indexMin);
         System.out.println();
-        System.out.println("середнє арифметичне чисел, розташованих після першого від'ємного числа у масиві : " + (sumAfterFirstNegativeNumbers) / countAfterFirstNegativeNumbers);
+        System.out.printf("середнє арифметичне чисел, розташованих після першого від'ємного числа у масиві : %.2f",arithmeticMean);
 
 
     }
