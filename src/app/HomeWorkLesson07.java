@@ -28,41 +28,46 @@ public class HomeWorkLesson07 {
 
             if (array[i] < 0) {
                 sum += array[i];
-                counterForUnpairedNumbers++;
                 if (!negativeNumberFound) {
                     negativeNumberFound = true;
                 }
-            } else {
-                counterForPairedNumbers++;
             }
 
-            if (array[i] <= min) {
-                min = array[i];
-                indexMin = i;
+                if (array[i] % 2 == 0) {
+                    counterForPairedNumbers++;
+                } else {
+                    counterForUnpairedNumbers++;
+                }
+
+                if (array[i] <= min) {
+                    min = array[i];
+                    indexMin = i;
+                }
+
+                if (array[i] >= max) {
+                    max = array[i];
+                    indexMax = i;
+                }
+
+
             }
+            float arithmeticMean = sumAfterFirstNegativeNumbers / countAfterFirstNegativeNumbers;
+            System.out.println(Arrays.toString(array));
+            System.out.println();
+            System.out.println("Сума всіх від'ємних чисел в масиві: " + sum);
+            System.out.println();
+            System.out.println("Кількість парних чисел в масиві: " + counterForPairedNumbers);
+            System.out.println();
+            System.out.println("Кількість непарних чисел в масиві: " + counterForUnpairedNumbers);
+            System.out.println();
+            System.out.println("найбільший елемент масиву : " + max + ", його індекс: " + indexMax);
+            System.out.println();
+            System.out.println("найменший елемент масиву : " + min + ", його індекс: " + indexMin);
+            System.out.println();
+            System.out.printf("середнє арифметичне чисел, розташованих після першого від'ємного числа у масиві : %.2f", arithmeticMean);
 
-            if (array[i] >= max) {
-                max = array[i];
-                indexMax = i;
-            }
-
-
-        }
-        float arithmeticMean = sumAfterFirstNegativeNumbers / countAfterFirstNegativeNumbers;
-        System.out.println(Arrays.toString(array));
-        System.out.println();
-        System.out.println("Сума всіх від'ємних чисел в масиві: " + sum);
-        System.out.println();
-        System.out.println("Кількість парних чисел в масиві: " + counterForPairedNumbers);
-        System.out.println();
-        System.out.println("Кількість непарних чисел в масиві: " + counterForUnpairedNumbers);
-        System.out.println();
-        System.out.println("найбільший елемент масиву : " + max + ", його індекс: " + indexMax);
-        System.out.println();
-        System.out.println("найменший елемент масиву : " + min + ", його індекс: " + indexMin);
-        System.out.println();
-        System.out.printf("середнє арифметичне чисел, розташованих після першого від'ємного числа у масиві : %.2f",arithmeticMean);
 
 
     }
+
 }
